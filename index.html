@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="fr">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
+    <title>Document</title>
+</head>
+
+<body>
+    <div class="header">
+        <img src="../MarvelDC/assets/marveldc.png" alt="logo marvel/dc">
+    </div>
+    <div class="Marvel">
+        <h2>Marvel Heroes</h2>
+        <div id="MarvelCard" class="container"></div>
+    </div>
+    <div class="DC">
+        <h2>DC Heroes</h2>
+        <div id="DCards" class="container"></div>
+    </div>
+
+
+
+
+    <script>
+        let MarvelCard = document.getElementById('MarvelCard')
+        let DCards = document.getElementById(DCards)
+
+        class MarvelHeroes {
+            constructor(nom, image, identité, pouvoir, ville, équipe) {
+                this.nom = nom
+                this.image = image
+                this.identité = identité
+                this.pouvoir = pouvoir
+                this.ville = ville
+                this.équipe = équipe
+            }
+        }
+        class DCHeroes {
+            constructor(nom, image, identité, pouvoir, ville, équipe) {
+                this.nom = nom
+                this.image = image
+                this.identité = identité
+                this.pouvoir = pouvoir
+                this.ville = ville
+                this.équipe = équipe
+            }
+        }
+
+        //Disposition des Héros Marvel
+
+        let IronMan = new MarvelHeroes('Iron Man', 'assets/ironman.jpg', 'Tony Stark', 'Génie,Armure volante', 'Malibu', 'Avengers')
+        let CptAmerica = new MarvelHeroes('Capitaine America', 'assets/cptamerica.jpg', 'Steven Rogers', 'Condition physique surhumaine', 'New York', 'Avengers')
+        let Panther = new MarvelHeroes('Black Panther', 'assets/panther.jpg', 'T-Challa', 'Sens aiguisés, Force et Agilité accrues', 'Wakanda', 'Avengers')
+        let Spider = new MarvelHeroes('Spider-man', 'assets/spider.jpg', 'Peter Parker', 'Force,endurance,agilité,réflexes et guérison surhumaine, précognition, toiles', 'New York', 'Avengers')
+        let Thor = new MarvelHeroes('Thor', 'assets/thorr.jpg', 'Thor Odinson', 'Foudre,force,endurance,longévité,peut voler', 'Asgard', 'Avengers')
+        let Wolverine = new MarvelHeroes('Wolverine', 'assets/wolverine.jpg', 'James Howlett ou Logan', 'Force,endurance,agilité,vitesse,longévité,guérison,sens hyper développés, squelettes et griffes en adamantium', 'New York', 'X-men et Avengers en fonction des jours')
+
+        //Mise en place des Cards
+
+        const MarvelHéros = [IronMan, CptAmerica, Panther, Spider, Thor, Wolverine];
+
+        for (let i = 0; i <= 5; i++) {
+            MarvelCard.innerHTML += `
+    <div class="card">
+        <img src="${MarvelHéros[i].image}" class="card-img-top" alt="Image de ${MarvelHéros[i].nom}">
+        <div class="card-body">
+        <ul>
+        <li class="card-text">Nom : ${MarvelHéros[i].nom}</li>
+        <li class="card-text">Identité : ${MarvelHéros[i].identité}</li>
+        <li class="card-text">Pouvoir : ${MarvelHéros[i].pouvoir}</li>
+        <li class="card-text">Ville : ${MarvelHéros[i].ville}</li>
+        <li class="card-text">Equipe : ${MarvelHéros[i].équipe}</li>
+        </ul>
+        </div>
+      </div>
+      `
+        }
+    </script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL"
+        crossorigin="anonymous"></script>
+</body>
+
+</html>
